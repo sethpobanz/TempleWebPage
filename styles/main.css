@@ -1,0 +1,211 @@
+:root {
+  --color-font: #36393b;
+  --color-primary: #a5d8ff;
+  --color-secondary: #afd0d6;
+  --accent-one: #bfb6bb;
+  --accent-two: #c49799;
+}
+
+* {
+  margin: 0;
+  line-height: calc(2em + 0.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  color: var(--color-font);
+  font-size: 1.5rem;
+}
+main {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 80rem;
+  text-align: left;
+}
+main picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main .welcome {
+  text-align: center;
+}
+h1 {
+  color: var(--color-font);
+  font-family: "Anton", sans-serif;
+  font-size: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 1em;
+}
+h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h3 {
+  color: #36393b;
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  padding: 3rem;
+  text-decoration: underline;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+p {
+  margin: 4rem;
+}
+main a {
+  text-decoration: none;
+  color: darkblue;
+}
+main a:hover {
+  color: #c49799;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  margin-bottom: 10rem;
+}
+.video-background {
+  background: #000;
+  position: absolute;
+  inset: 0;
+  z-index: -99;
+}
+
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.hero .text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 2rem;
+  color: #ffff;
+}
+header {
+  display: block;
+  background-color: lightgray;
+}
+body header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.button {
+  color: var(--color-font);
+  font-family: "Anton", sans-serif;
+  font-size: 3rem;
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+.button[href]:hover {
+  color: var(--accent-two);
+}
+
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin: 0 0rem;
+  padding-top: 15rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.cards img {
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+.card {
+  transition: color 300ms;
+  flex: 1 1 0;
+  margin-bottom: 10rem;
+  text-decoration: none;
+  color: var(--color-font);
+  text-align: center;
+}
+
+.card:hover {
+  color: var(--accent-two);
+}
+
+footer {
+  display: block;
+  color: black;
+  background-color: lightgray;
+  height: 15vh;
+  text-align: center;
+}
+
+body .panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  padding: 2rem;
+}
+
+body .panel .text-wrapper {
+  grid-column: 1;
+}
+body .panel .image-wrapper {
+  grid-column: 2;
+}
+.panel li {
+  list-style: circle;
+}
+
+.modernpanel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  padding: 2rem;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground {
+    width: 300%;
+    left: -100%;
+  }
+}

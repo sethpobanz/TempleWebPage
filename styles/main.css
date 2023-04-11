@@ -16,6 +16,37 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  --slide-height: 100vh;
+  --slider-height: 100%;
+
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-rows: 100vh;
+  grid-auto-flow: row;
+
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-h > * {
+  scroll-snap-align: start;
+  /* chrome only */
+  scroll-snap-stop: always;
+
+  color: #fff;
+  height: var(--slide-height);
+}
+
+.scroll-h img {
+  height: 100vh;
+  object-fit: cover;
+}
+
+.small-img {
+  padding: 20vmin;
+  object-position: 10% top;
+}
 body {
   font-family: "Roboto Condensed", sans-serif;
   color: var(--color-font);
@@ -196,7 +227,11 @@ body .panel .image-wrapper {
   grid-template-rows: repeat(1, 1fr);
   padding: 2rem;
 }
-
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (min-aspect-ratio: 16/9) {
   .video-foreground {
     height: 300%;
